@@ -24,9 +24,13 @@ Disini, Publsiher akan mengirim pesan ke queue `user_created`, yang mana akan di
 ## Screenshot of running RabbitMQ
 ![Running RabbitMQ](assets/image.png)
 
-## Sending and processing event.
+## Sending and processing event
 ![Publisher Console](assets/publisher_console.png)
 ![Subscriber Console](assets/subscriber_console.png)
 
 Gambar-gambar di atas adalah tampak console publisher dan subscriber yang mana terjadi komunikasi menggunakan RabbitMQ antar satu sama lain. Secara lebih detail, publisher akan mengirim data (berjumlah 5) ke message broker. Kemudian, program subscriber akan menerima dan mengonsumsi data-data tersebut (dengan menampilkannnya ke konsol).
 
+## Monitoring Chart Based on Publisher
+![Monitoring Chart](assets/monitoring_chart.png)
+
+Setiap kali program publisher diaktifkan, terlihat adanya peningkatan signifikan pada message rates dalam grafik. Nilai ini merepresentasikan volume pesan yang berhasil dikirimkan ke message broker dalam rentang waktu spesifik. Pola lonjakan (spike) yang konsisten ini memperlihatkan korelasi langsung antara eksekusi publisher dan aktivitas pengiriman data. Dengan demikian, grafik tersebut berfungsi sebagai alat visual untuk melacak kinerja dan lalu lintas pesan dalam infrastruktur message queue.
