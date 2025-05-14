@@ -1,0 +1,22 @@
+Pascal Hafidz Fajri
+
+230622746
+
+## Berapa banyak data yang dikirim publisher ke message broker dalam satu eksekusi?
+
+Dalam satu eksekusi program akan mengirimkan 5 pesan/event ke message broker. Setiap pesan berisi sebuah struct UserCreatedEventMessage yang memiliki 2 field:
+- `user_id`: String dengan panjang 1 karakter (nilai "1" sampai "5")
+- `user_name`: String dengan pola "NPM-Nama" 
+
+Jika ingin dihitung ukuran data per pesan yang dikirim:
+- `user_id`: 1 byte 
+- `user_name`: 9 byte untuk NPM, 1 byte untuk `-`, dan 4 byte untuk Nama
+
+Total ukuran data yang dikirim dalam sekali jalan publisher: 
+5 pesan x 15 byte = 75 byte 
+
+## URL "amqp://guest:guest@localhost:5672" yang sama antara publisher dan subscriber
+
+URL yang sama ini berarti, kedua program terhubung ke message broker (RabbitMQ) yang berjalan di mesin yang sama (`localhost`) dan dengan port yang sama (`5672`). Selain itu, kredensial untuk mengakses RabbitMQ juga sama, yaitu `guest` dan `guest`.
+
+Disini, Publsiher akan mengirim pesan ke queue `user_created`, yang mana akan didengar oleh Subscriber. Agar komunikasi itu bisa terjadi, publisher dan subscriber harus terhubung ke message broker yang sama.
