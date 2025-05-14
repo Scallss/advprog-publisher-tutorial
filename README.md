@@ -23,3 +23,10 @@ Disini, Publsiher akan mengirim pesan ke queue `user_created`, yang mana akan di
 
 ## Screenshot of running RabbitMQ
 ![Running RabbitMQ](assets/image.png)
+
+## Sending and processing event.
+![Publisher Console](assets/publisher_console.png)
+![Subscriber Console](assets/subscriber_console.png)
+
+Gambar-gambar di atas adalah tampak console publisher dan subscriber yang mana terjadi komunikasi menggunakan RabbitMQ antar satu sama lain. Secara lebih detail, publisher akan mengirim data (berjumlah 5) ke message broker. Kemudian, program subscriber akan menerima dan mengonsumsi data-data tersebut (dengan menampilkannnya ke konsol).
+
