@@ -20,3 +20,6 @@ Total ukuran data yang dikirim dalam sekali jalan publisher:
 URL yang sama ini berarti, kedua program terhubung ke message broker (RabbitMQ) yang berjalan di mesin yang sama (`localhost`) dan dengan port yang sama (`5672`). Selain itu, kredensial untuk mengakses RabbitMQ juga sama, yaitu `guest` dan `guest`.
 
 Disini, Publsiher akan mengirim pesan ke queue `user_created`, yang mana akan didengar oleh Subscriber. Agar komunikasi itu bisa terjadi, publisher dan subscriber harus terhubung ke message broker yang sama.
+
+## Screenshot of running RabbitMQ
+![Running RabbitMQ](assets/image.png)
